@@ -1,0 +1,16 @@
+dist
+.next
+next-env.d.ts
+next.config.js
+node_modules
+yarn.lock
+package-lock.json
+public
+README.md
+build.yml
+sonar-project.properties
+
+#vs-code extensions
+.history/*
+.vscode/*
+
