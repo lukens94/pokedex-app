@@ -1,0 +1,78 @@
+.Header {
+  min-height: 5.6rem;
+  background-color: $third-color;
+  box-shadow: $box-shadow-4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.6rem;
+  transition: ease-in-out all 1s;
+
+  @include for-tablet-portrait-up {
+    min-height: 9.3rem;
+  }
+
+  @include for-desktop-up {
+    padding: 1.4rem 15.7rem;
+  }
+
+  &__Navbar {
+    display: none;
+    li:not(:first-child) {
+      margin-left: 2.4rem;
+
+      @include for-desktop-up {
+        margin-left: 6rem;
+      }
+    }
+
+    @include for-tablet-portrait-up {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+    }
+
+    &LinkItem {
+      text-decoration: none;
+      color: $dark;
+      &--active {
+        font-weight: 700;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0.5rem;
+        background: $dark;
+        transition: width 0.2s;
+        border-radius: 1rem;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__Logo {
+    width: 5.9rem;
+    height: 5.6rem;
+    position: relative;
+    @include for-tablet-portrait-up {
+      height: 9.3rem;
+      width: 12.1rem;
+    }
+
+    @include for-desktop-up {
+      width: 15.7rem;
+    }
+  }
+
+  &__BurgerBtn {
+    display: block;
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+  }
+}

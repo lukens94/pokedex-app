@@ -2,6 +2,9 @@
   "name": "next-13",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -23,15 +26,16 @@
     "next": "13.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.58.1",
     "typescript": "4.9.3"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
-    "eslint-config-next": "13.0.6",
     "eslint": "^8.33.0",
     "eslint-config-google": "^0.14.0",
+    "eslint-config-next": "13.0.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -40,6 +44,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.1",
+    "lint-staged": "^13.1.2",
     "postcss": "^8.4.19",
     "postcss-import": "^15.1.0",
     "postcss-include-media": "^1.1.1",

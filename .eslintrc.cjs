@@ -29,6 +29,6 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 'off',
-    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-console': 'off',
   },
 };
