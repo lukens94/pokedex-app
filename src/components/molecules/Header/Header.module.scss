@@ -7,6 +7,7 @@
   justify-content: space-between;
   padding: 0 2.6rem;
   transition: ease-in-out all 1s;
+  position: relative;
 
   @include for-tablet-portrait-up {
     min-height: 9.3rem;

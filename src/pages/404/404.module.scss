@@ -1,0 +1,17 @@
+.ErrorPage {
+  background-color: $danger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__text {
+    text-align: center;
+    font-weight: bold;
+    &--white {
+      color: $white;
+    }
+  }
+}
