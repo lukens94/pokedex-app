@@ -1,0 +1,32 @@
+.Footer {
+  background: transparent;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  @include for-tablet-portrait-up {
+    flex-direction: row;
+    margin: 2.3rem 3.7rem;
+  }
+
+  @include for-desktop-up {
+    margin: 3.3rem 14rem;
+  }
+
+  &__Text {
+    font-weight: 400;
+
+    @include for-tablet-portrait-up {
+      margin: 0;
+    }
+  }
+
+  &__OurTeam {
+    text-decoration: none;
+    color: $dark;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+}
