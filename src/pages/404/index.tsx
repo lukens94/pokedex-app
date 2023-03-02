@@ -4,7 +4,7 @@ import { Button } from '../../components/atoms/Button/Button';
 import { Logo404 } from '../../components/atoms/Logo404/Logo404';
 import style from './404.module.scss';
 
-export default function Custom404() {
+const Custom404 = () => {
   const router = useRouter();
 
   const handleClick = () => {
@@ -19,7 +19,9 @@ export default function Custom404() {
       <Button text={'Return'} handleClick={handleClick} />
     </div>
   );
-}
+};
+
+export default Custom404;
 
 export const getStaticProps = async () => {
   return {

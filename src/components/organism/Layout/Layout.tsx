@@ -8,7 +8,6 @@ const Layout: React.FC<any> = ({ children }) => {
   return (
     <div className={style.Layout}>
       <div>
-        {' '}
         <Header />
         {children}
       </div>

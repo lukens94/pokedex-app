@@ -13,7 +13,7 @@ export const Header = () => {
   console.log(router.pathname);
 
   return (
-    <div className={style.Header}>
+    <header className={style.Header}>
       <div className={style.Header__Logo}>
         <Image src={Logo} alt={'pokemon-logo'} quality={100} fill />
       </div>
@@ -39,6 +39,6 @@ export const Header = () => {
         width={20}
         height={20}
       />
-    </div>
+    </header>
   );
 };
