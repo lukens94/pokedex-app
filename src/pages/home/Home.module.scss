@@ -1,4 +1,14 @@
 .Home {
   background: $yellow-gradient;
   min-height: 100vh;
+  display: flex;
+  padding: 0 2.2rem;
+
+  @include for-tablet-portrait-up {
+    padding: 0 7rem;
+  }
+
+  @include for-desktop-up {
+    padding: 0 15.6rem;
+  }
 }

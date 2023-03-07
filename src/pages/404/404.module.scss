@@ -8,10 +8,11 @@
   gap: 1rem;
   padding: 5rem 0;
 
-  &__text {
+  &__Text {
     text-align: center;
     font-weight: bold;
-    &--white {
+
+    & span {
       color: $white;
     }
   }
