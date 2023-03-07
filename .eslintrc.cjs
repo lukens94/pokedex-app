@@ -30,5 +30,6 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 'off',
     'no-console': 'off',
+    'no-unused-vars': 'off',
   },
 };
