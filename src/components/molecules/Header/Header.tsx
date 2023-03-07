@@ -15,7 +15,7 @@ export const Header = () => {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [router]);
+  }, [router.pathname]);
 
   return (
     <header>

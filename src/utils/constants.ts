@@ -1,7 +1,7 @@
 export const NavbarItems = [
   {
     text: 'Home',
-    link: '/',
+    link: '/home',
     id: 1,
   },
   {
