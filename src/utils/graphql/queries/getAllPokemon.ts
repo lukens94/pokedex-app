@@ -1,11 +1,11 @@
 import { gql } from 'graphql-request';
 
-const GET_ALL_POKEMONS = /* GraphQL */ gql`
+const GET_ALL_POKEMONS = gql`
   query Pokemons($limit: Int!, $offset: Int!) {
     pokemons(limit: $limit, offset: $offset) {
       results {
         id
-        image
+        dreamworld
         name
       }
     }

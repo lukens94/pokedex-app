@@ -1,0 +1,18 @@
+.Pokedex {
+  margin: 2.9rem 2rem;
+  text-align: center;
+
+  @include for-tablet-portrait-up {
+    margin: 2.7rem 2.3rem;
+  }
+
+  @include for-desktop-up {
+    margin: 7.3rem 15.8rem;
+  }
+
+  h2 {
+    font-weight: 200;
+    color: $dark;
+    margin: 0;
+  }
+}
