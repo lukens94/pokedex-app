@@ -14,10 +14,10 @@ import * as types from './graphql';
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-  '\n  query Pokemons($limit: Int!, $offset: Int!) {\n    pokemons(limit: $limit, offset: $offset) {\n      results {\n        id\n        dreamworld\n        name\n      }\n    }\n  }\n':
-    types.PokemonsDocument,
-  '\n  query Pokemon($name: String!) {\n    pokemon(name: $name) {\n      name\n      id\n      height\n      weight\n      status\n      sprites {\n        front_default\n      }\n    }\n  }\n':
-    types.PokemonDocument,
+  '\n  query getPokemonList($limit: Int!, $offset: Int!) {\n    pokemon_v2_pokemon(limit: $limit, offset: $offset) {\n      id\n      pokemon_species_id\n      name\n      base_experience\n      height\n      weight\n      pokemon_v2_pokemontypes {\n        pokemon_v2_type {\n          name\n        }\n      }\n      pokemon_v2_pokemonsprites {\n        sprites\n      }\n      pokemon_v2_pokemonstats {\n        base_stat\n        pokemon_v2_stat {\n          name\n        }\n      }\n    }\n  }\n':
+    types.GetPokemonListDocument,
+  '\n  query getPokemon($id: Int!) {\n    pokemon_v2_pokemon(where: { id: { _eq: $id } }) {\n      id\n      pokemon_species_id\n      name\n      is_default\n      base_experience\n      height\n      weight\n      pokemon_v2_pokemontypes {\n        pokemon_v2_type {\n          name\n        }\n      }\n      pokemon_v2_pokemonsprites {\n        sprites\n      }\n      pokemon_v2_pokemonstats {\n        base_stat\n        pokemon_v2_stat {\n          name\n        }\n      }\n    }\n  }\n':
+    types.GetPokemonDocument,
 };
 
 /**
@@ -38,14 +38,14 @@ export function graphql(source: string): unknown;
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: '\n  query Pokemons($limit: Int!, $offset: Int!) {\n    pokemons(limit: $limit, offset: $offset) {\n      results {\n        id\n        dreamworld\n        name\n      }\n    }\n  }\n'
-): (typeof documents)['\n  query Pokemons($limit: Int!, $offset: Int!) {\n    pokemons(limit: $limit, offset: $offset) {\n      results {\n        id\n        dreamworld\n        name\n      }\n    }\n  }\n'];
+  source: '\n  query getPokemonList($limit: Int!, $offset: Int!) {\n    pokemon_v2_pokemon(limit: $limit, offset: $offset) {\n      id\n      pokemon_species_id\n      name\n      base_experience\n      height\n      weight\n      pokemon_v2_pokemontypes {\n        pokemon_v2_type {\n          name\n        }\n      }\n      pokemon_v2_pokemonsprites {\n        sprites\n      }\n      pokemon_v2_pokemonstats {\n        base_stat\n        pokemon_v2_stat {\n          name\n        }\n      }\n    }\n  }\n'
+): (typeof documents)['\n  query getPokemonList($limit: Int!, $offset: Int!) {\n    pokemon_v2_pokemon(limit: $limit, offset: $offset) {\n      id\n      pokemon_species_id\n      name\n      base_experience\n      height\n      weight\n      pokemon_v2_pokemontypes {\n        pokemon_v2_type {\n          name\n        }\n      }\n      pokemon_v2_pokemonsprites {\n        sprites\n      }\n      pokemon_v2_pokemonstats {\n        base_stat\n        pokemon_v2_stat {\n          name\n        }\n      }\n    }\n  }\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: '\n  query Pokemon($name: String!) {\n    pokemon(name: $name) {\n      name\n      id\n      height\n      weight\n      status\n      sprites {\n        front_default\n      }\n    }\n  }\n'
-): (typeof documents)['\n  query Pokemon($name: String!) {\n    pokemon(name: $name) {\n      name\n      id\n      height\n      weight\n      status\n      sprites {\n        front_default\n      }\n    }\n  }\n'];
+  source: '\n  query getPokemon($id: Int!) {\n    pokemon_v2_pokemon(where: { id: { _eq: $id } }) {\n      id\n      pokemon_species_id\n      name\n      is_default\n      base_experience\n      height\n      weight\n      pokemon_v2_pokemontypes {\n        pokemon_v2_type {\n          name\n        }\n      }\n      pokemon_v2_pokemonsprites {\n        sprites\n      }\n      pokemon_v2_pokemonstats {\n        base_stat\n        pokemon_v2_stat {\n          name\n        }\n      }\n    }\n  }\n'
+): (typeof documents)['\n  query getPokemon($id: Int!) {\n    pokemon_v2_pokemon(where: { id: { _eq: $id } }) {\n      id\n      pokemon_species_id\n      name\n      is_default\n      base_experience\n      height\n      weight\n      pokemon_v2_pokemontypes {\n        pokemon_v2_type {\n          name\n        }\n      }\n      pokemon_v2_pokemonsprites {\n        sprites\n      }\n      pokemon_v2_pokemonstats {\n        base_stat\n        pokemon_v2_stat {\n          name\n        }\n      }\n    }\n  }\n'];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

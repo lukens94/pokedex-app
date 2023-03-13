@@ -1,6 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 import { InputText } from '../../components/atoms/InputText/InputText';
+import { GetPokemonListQuery } from '../../gql/graphql';
 import { useGetPokemonById, useGetPokemons } from '../../hooks/pokemon-services';
 import client from '../../utils/graphql/client';
 import GET_ALL_POKEMONS from '../../utils/graphql/queries/getAllPokemon';
@@ -17,10 +18,14 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default function Pokedex(results: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Pokedex(results: GetPokemonListQuery) {
   const {
-    data: { pokemons: allPokemons },
+    data: { pokemon_v2_pokemon: allPokemons },
   } = useGetPokemons({}, results);
+
+  console.log(allPokemons);
+
+  const { data: pokemon } = useGetPokemonById(1);
 
   return (
     <div className={style.Pokedex}>
