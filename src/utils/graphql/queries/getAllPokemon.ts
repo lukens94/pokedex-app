@@ -1,6 +1,6 @@
-import { gql } from 'graphql-request';
+import { graphql } from '../../../gql';
 
-const GET_ALL_POKEMONS = gql`
+const GET_ALL_POKEMONS = graphql(/* GraphQL */ `
   query Pokemons($limit: Int!, $offset: Int!) {
     pokemons(limit: $limit, offset: $offset) {
       results {
@@ -10,6 +10,6 @@ const GET_ALL_POKEMONS = gql`
       }
     }
   }
-`;
+`);
 
 export default GET_ALL_POKEMONS;

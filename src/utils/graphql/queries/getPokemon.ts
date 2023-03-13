@@ -1,6 +1,6 @@
-import { gql } from 'graphql-request';
+import { graphql } from '../../../gql';
 
-const GET_SPECIFIC_POKEMON = gql`
+const GET_SPECIFIC_POKEMON = graphql(/* GraphQL */ `
   query Pokemon($name: String!) {
     pokemon(name: $name) {
       name
@@ -13,5 +13,5 @@ const GET_SPECIFIC_POKEMON = gql`
       }
     }
   }
-`;
+`);
 export default GET_SPECIFIC_POKEMON;
